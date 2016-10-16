@@ -21433,7 +21433,7 @@
 /* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -21444,6 +21444,20 @@
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _LeftBlock = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./LeftBlock.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	
+	var _LeftBlock2 = _interopRequireDefault(_LeftBlock);
+	
+	var _RightBlock = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./RightBlock.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	
+	var _RightBlock2 = _interopRequireDefault(_RightBlock);
+	
+	var _HeroSelect = __webpack_require__(176);
+	
+	var _HeroSelect2 = _interopRequireDefault(_HeroSelect);
+	
+	__webpack_require__(173);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -21463,16 +21477,14 @@
 		}
 	
 		_createClass(Main, [{
-			key: "render",
+			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
-					"div",
-					{ id: "main" },
-					_react2.default.createElement(
-						"h1",
-						null,
-						"Yo"
-					)
+					'div',
+					{ id: 'main' },
+					_react2.default.createElement(_LeftBlock2.default, null),
+					_react2.default.createElement(_HeroSelect2.default, null),
+					_react2.default.createElement(Rightblock, null)
 				);
 			}
 		}]);
@@ -21481,6 +21493,30 @@
 	}(_react2.default.Component);
 	
 	exports.default = Main;
+
+/***/ },
+/* 173 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 174 */,
+/* 175 */,
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _HeroBox = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"HeroBox.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	
+	var _HeroBox2 = _interopRequireDefault(_HeroBox);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }
 /******/ ]);
