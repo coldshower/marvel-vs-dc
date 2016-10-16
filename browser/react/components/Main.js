@@ -9,6 +9,10 @@ export default class Main extends React.Component {
 		super(props);
 	}
 
+  componentWillMount () {
+    
+  }
+  
 	render () {
 		return (
 			<div id="main">
