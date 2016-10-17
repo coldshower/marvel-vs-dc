@@ -9,6 +9,8 @@ export default class Main extends React.Component {
 		super(props);
     this.state = initialState;
     this.changeCurrentHero = this.changeCurrentHero.bind(this);
+    this.addToRoster = this.addToRoster.bind(this);
+    this.resetCurrentHero = this.resetCurrentHero.bind(this);
 	}
 
   changeCurrentHero (hero) {
@@ -17,16 +19,37 @@ export default class Main extends React.Component {
     });
   }
 
+  resetCurrentHero (hero) {
+    this.setState({
+      currentHero: {}
+    });
+  }
+
+  addToRoster (hero) {
+    const { currentRoster } = this.state;
+    // if (currentRoster.length < 3) {
+    //   this.setState({
+    //     currentRoster: currentRoster.concat([hero])
+    //   });
+    // } else {
+    //   this.setState({
+    //     currentRoster: [hero]
+    //   });
+    // }
+  }
+
 	render () {
-    const { heroes, currentHero, changeCurrentHero } = this.state;
+    const { heroes, currentHero, currentRoster } = this.state;
 		return (
 			<div id="main">
-        <Block currentHero={ currentHero }/>
+        <Block currentHero={ currentHero } currentRoster={ currentRoster } side="left" />
         <HeroSelect 
           heroes={ heroes } 
-          changeCurrentHero={ changeCurrentHero }
+          changeCurrentHero={ this.changeCurrentHero }
+          resetCurrentHero={ this.resetCurrentHero }
+          addToRoster={ this.addToRoster }
         />
-        <Block currentHero={ {} } />
+        <Block currentHero={ {} } side="right" />
 			</div>
 		);
 	}

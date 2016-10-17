@@ -21449,15 +21449,15 @@
 	
 	var _Block2 = _interopRequireDefault(_Block);
 	
-	var _HeroSelect = __webpack_require__(175);
+	var _HeroSelect = __webpack_require__(179);
 	
 	var _HeroSelect2 = _interopRequireDefault(_HeroSelect);
 	
-	var _initialState = __webpack_require__(179);
+	var _initialState = __webpack_require__(183);
 	
 	var _initialState2 = _interopRequireDefault(_initialState);
 	
-	__webpack_require__(180);
+	__webpack_require__(184);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -21477,6 +21477,8 @@
 	
 	    _this.state = _initialState2.default;
 	    _this.changeCurrentHero = _this.changeCurrentHero.bind(_this);
+	    _this.addToRoster = _this.addToRoster.bind(_this);
+	    _this.resetCurrentHero = _this.resetCurrentHero.bind(_this);
 	    return _this;
 	  }
 	
@@ -21488,22 +21490,45 @@
 	      });
 	    }
 	  }, {
+	    key: 'resetCurrentHero',
+	    value: function resetCurrentHero(hero) {
+	      this.setState({
+	        currentHero: {}
+	      });
+	    }
+	  }, {
+	    key: 'addToRoster',
+	    value: function addToRoster(hero) {
+	      var currentRoster = this.state.currentRoster;
+	      // if (currentRoster.length < 3) {
+	      //   this.setState({
+	      //     currentRoster: currentRoster.concat([hero])
+	      //   });
+	      // } else {
+	      //   this.setState({
+	      //     currentRoster: [hero]
+	      //   });
+	      // }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _state = this.state;
 	      var heroes = _state.heroes;
 	      var currentHero = _state.currentHero;
-	      var changeCurrentHero = _state.changeCurrentHero;
+	      var currentRoster = _state.currentRoster;
 	
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'main' },
-	        _react2.default.createElement(_Block2.default, { currentHero: currentHero }),
+	        _react2.default.createElement(_Block2.default, { currentHero: currentHero, currentRoster: currentRoster, side: 'left' }),
 	        _react2.default.createElement(_HeroSelect2.default, {
 	          heroes: heroes,
-	          changeCurrentHero: changeCurrentHero
+	          changeCurrentHero: this.changeCurrentHero,
+	          resetCurrentHero: this.resetCurrentHero,
+	          addToRoster: this.addToRoster
 	        }),
-	        _react2.default.createElement(_Block2.default, { currentHero: {} })
+	        _react2.default.createElement(_Block2.default, { currentHero: {}, side: 'right' })
 	      );
 	    }
 	  }]);
@@ -21529,13 +21554,26 @@
 	
 	__webpack_require__(174);
 	
+	var _Roster = __webpack_require__(175);
+	
+	var _Roster2 = _interopRequireDefault(_Roster);
+	
+	var _BigScreen = __webpack_require__(177);
+	
+	var _BigScreen2 = _interopRequireDefault(_BigScreen);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = function (props) {
+	exports.default = function (_ref) {
+	  var currentHero = _ref.currentHero;
+	  var currentRoster = _ref.currentRoster;
+	  var side = _ref.side;
+	
 	  return _react2.default.createElement(
 	    'div',
 	    { className: 'block' },
-	    'Hello'
+	    _react2.default.createElement(_BigScreen2.default, { currentHero: currentHero, side: side }),
+	    _react2.default.createElement(_Roster2.default, { currentRoster: currentRoster })
 	  );
 	};
 
@@ -21552,42 +21590,58 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _HeroBox = __webpack_require__(176);
+	var _RosterBox = __webpack_require__(176);
 	
-	var _HeroBox2 = _interopRequireDefault(_HeroBox);
+	var _RosterBox2 = _interopRequireDefault(_RosterBox);
 	
-	__webpack_require__(178);
+	__webpack_require__(185);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = function (_ref) {
-	  var heroes = _ref.heroes;
-	  var changeCurrentHero = _ref.changeCurrentHero;
+		var currentRoster = _ref.currentRoster;
 	
-	  return _react2.default.createElement(
-	    'div',
-	    { id: 'hero-select' },
-	    heroes.map(function (hero) {
-	      return _react2.default.createElement(_HeroBox2.default, {
-	        key: hero.name,
-	        hero: hero,
-	        onClick: function onClick() {
-	          return changeCurrentHero(hero);
-	        }
-	      });
-	    })
-	  );
+		console.log(currentRoster);
+		return _react2.default.createElement('div', { className: 'roster' });
 	};
 
 /***/ },
 /* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	__webpack_require__(186);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (_ref) {
+		var hero = _ref.hero;
+	
+		return _react2.default.createElement(
+			'div',
+			{ className: 'roster-box' },
+			_react2.default.createElement('img', { src: hero.smallUrl })
+		);
+	};
+
+/***/ },
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21600,7 +21654,91 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	__webpack_require__(177);
+	__webpack_require__(178);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (_ref) {
+	  var currentHero = _ref.currentHero;
+	  var side = _ref.side;
+	
+	  return _react2.default.createElement(
+	    'div',
+	    { className: "big-screen screen-" + side },
+	    _react2.default.createElement('img', { src: currentHero.largeUrl })
+	  );
+	};
+
+/***/ },
+/* 178 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _HeroBox = __webpack_require__(180);
+	
+	var _HeroBox2 = _interopRequireDefault(_HeroBox);
+	
+	__webpack_require__(182);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (_ref) {
+	  var heroes = _ref.heroes;
+	  var changeCurrentHero = _ref.changeCurrentHero;
+	  var resetCurrentHero = _ref.resetCurrentHero;
+	  var addToRoster = _ref.addToRoster;
+	
+	  return _react2.default.createElement(
+	    'div',
+	    { id: 'hero-select' },
+	    heroes.map(function (hero) {
+	      return _react2.default.createElement(_HeroBox2.default, {
+	        key: hero.name,
+	        hero: hero,
+	        onMouseEnter: function onMouseEnter() {
+	          return changeCurrentHero(hero);
+	        },
+	        onMouseLeave: function onMouseLeave() {
+	          return resetCurrentHero();
+	        },
+	        onClick: function onClick() {
+	          return addToRoster(hero);
+	        }
+	      });
+	    })
+	  );
+	};
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	__webpack_require__(181);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -21611,24 +21749,24 @@
 	    'div',
 	    { className: 'hero-box' },
 	    _react2.default.createElement('div', { className: 'unhovered' }),
-	    _react2.default.createElement('img', { src: hero.boxUrl })
+	    _react2.default.createElement('img', { src: hero.smallUrl })
 	  );
 	};
 
 /***/ },
-/* 177 */
+/* 181 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 178 */
+/* 182 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 179 */
+/* 183 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21639,58 +21777,75 @@
 	exports.default = {
 	  heroes: [{
 	    name: 'Iron Man',
-	    boxUrl: '../public/assets/herobox/ironman.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    smallUrl: '../public/assets/herobox/ironman.jpeg',
+	    largeUrl: '../../public/assets/heroblock/'
 	  }, {
 	    name: 'Batman',
-	    boxUrl: '../public/assets/herobox/batman.png',
-	    blockUrl: '../../public/assets/heroblock/'
+	    smallUrl: '../public/assets/herobox/batman.png',
+	    largeUrl: '../../public/assets/heroblock/'
 	  }, {
 	    name: 'Wonder Woman',
-	    boxUrl: '../public/assets/herobox/wonderwoman.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    smallUrl: '../public/assets/herobox/wonderwoman.jpeg',
+	    largeUrl: '../../public/assets/heroblock/'
 	  }, {
 	    name: 'Wolverine',
-	    boxUrl: '../public/assets/herobox/wolverine.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    smallUrl: '../public/assets/herobox/wolverine.jpeg',
+	    largeUrl: '../../public/assets/heroblock/'
 	  }, {
 	    name: 'Sentinel',
-	    boxUrl: '../public/assets/herobox/sentinel.jpg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    smallUrl: '../public/assets/herobox/sentinel.jpg',
+	    largeUrl: '../../public/assets/heroblock/'
 	  }, {
 	    name: 'Superman',
-	    boxUrl: '../public/assets/herobox/superman.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    smallUrl: '../public/assets/herobox/superman.jpeg',
+	    largeUrl: '../../public/assets/heroblock/'
 	  }, {
 	    name: 'Darkseid',
-	    boxUrl: '../public/assets/herobox/darkseid.jpg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    smallUrl: '../public/assets/herobox/darkseid.jpg',
+	    largeUrl: '../../public/assets/heroblock/'
 	  }, {
 	    name: 'Thanos',
-	    boxUrl: '../public/assets/herobox/thanos.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    smallUrl: '../public/assets/herobox/thanos.jpeg',
+	    largeUrl: '../../public/assets/heroblock/'
 	  }, {
 	    name: 'Xavier',
-	    boxUrl: '../public/assets/herobox/xavier.png',
-	    blockUrl: '../../public/assets/heroblock/'
+	    smallUrl: '../public/assets/herobox/xavier.png',
+	    largeUrl: '../../public/assets/heroblock/'
 	  }, {
 	    name: 'Green Lantern',
-	    boxUrl: '../public/assets/herobox/greenlantern.png',
-	    blockUrl: '../../public/assets/heroblock/'
+	    smallUrl: '../public/assets/herobox/greenlantern.png',
+	    largeUrl: '../../public/assets/heroblock/'
 	  }, {
 	    name: 'Flash',
-	    boxUrl: '../public/assets/herobox/flash.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    smallUrl: '../public/assets/herobox/flash.jpeg',
+	    largeUrl: '../../public/assets/heroblock/'
 	  }, {
 	    name: 'Spiderman',
-	    boxUrl: '../public/assets/herobox/spiderman.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    smallUrl: '../public/assets/herobox/spiderman.jpeg',
+	    largeUrl: '../../public/assets/heroblock/'
 	  }],
-	  currentHero: {}
+	  currentHero: {
+	    name: 'Spiderman',
+	    smallUrl: '../public/assets/herobox/spiderman.jpeg',
+	    largeUrl: '../../public/assets/heroblock/'
+	  },
+	  currentRoster: [{ name: 'a', largeUrl: '', smallUrl: '' }]
 	};
 
 /***/ },
-/* 180 */
+/* 184 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 185 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 186 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
