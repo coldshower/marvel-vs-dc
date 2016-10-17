@@ -23,7 +23,11 @@ module.exports = {
 				test: /\.scss$/,
 				exclude: /node_modules/,
 				loader: ExtractTextPlugin.extract('css!sass')
-			}
+			},
+			{
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file-loader?name=./dist/[hash].[ext]'
+    	}
 		]
 	},
 	plugins: [

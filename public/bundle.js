@@ -21436,7 +21436,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -21445,19 +21445,19 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _LeftBlock = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./LeftBlock.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _Block = __webpack_require__(173);
 	
-	var _LeftBlock2 = _interopRequireDefault(_LeftBlock);
+	var _Block2 = _interopRequireDefault(_Block);
 	
-	var _RightBlock = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./RightBlock.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-	
-	var _RightBlock2 = _interopRequireDefault(_RightBlock);
-	
-	var _HeroSelect = __webpack_require__(176);
+	var _HeroSelect = __webpack_require__(175);
 	
 	var _HeroSelect2 = _interopRequireDefault(_HeroSelect);
 	
-	__webpack_require__(173);
+	var _initialState = __webpack_require__(179);
+	
+	var _initialState2 = _interopRequireDefault(_initialState);
+	
+	__webpack_require__(180);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -21468,55 +21468,232 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var Main = function (_React$Component) {
-		_inherits(Main, _React$Component);
+	  _inherits(Main, _React$Component);
 	
-		function Main(props) {
-			_classCallCheck(this, Main);
+	  function Main(props) {
+	    _classCallCheck(this, Main);
 	
-			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
-		}
+	    var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 	
-		_createClass(Main, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					{ id: 'main' },
-					_react2.default.createElement(_LeftBlock2.default, null),
-					_react2.default.createElement(_HeroSelect2.default, null),
-					_react2.default.createElement(Rightblock, null)
-				);
-			}
-		}]);
+	    _this.state = _initialState2.default;
+	    _this.changeCurrentHero = _this.changeCurrentHero.bind(_this);
+	    return _this;
+	  }
 	
-		return Main;
+	  _createClass(Main, [{
+	    key: 'changeCurrentHero',
+	    value: function changeCurrentHero(hero) {
+	      this.setState({
+	        currentHero: hero
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _state = this.state;
+	      var heroes = _state.heroes;
+	      var currentHero = _state.currentHero;
+	      var changeCurrentHero = _state.changeCurrentHero;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'main' },
+	        _react2.default.createElement(_Block2.default, { currentHero: currentHero }),
+	        _react2.default.createElement(_HeroSelect2.default, {
+	          heroes: heroes,
+	          changeCurrentHero: changeCurrentHero
+	        }),
+	        _react2.default.createElement(_Block2.default, { currentHero: {} })
+	      );
+	    }
+	  }]);
+	
+	  return Main;
 	}(_react2.default.Component);
 	
 	exports.default = Main;
 
 /***/ },
 /* 173 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 174 */,
-/* 175 */,
-/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _HeroBox = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"HeroBox.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	__webpack_require__(174);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'block' },
+	    'Hello'
+	  );
+	};
+
+/***/ },
+/* 174 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _HeroBox = __webpack_require__(176);
 	
 	var _HeroBox2 = _interopRequireDefault(_HeroBox);
-
+	
+	__webpack_require__(178);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (_ref) {
+	  var heroes = _ref.heroes;
+	  var changeCurrentHero = _ref.changeCurrentHero;
+	
+	  return _react2.default.createElement(
+	    'div',
+	    { id: 'hero-select' },
+	    heroes.map(function (hero) {
+	      return _react2.default.createElement(_HeroBox2.default, {
+	        key: hero.name,
+	        hero: hero,
+	        onClick: function onClick() {
+	          return changeCurrentHero(hero);
+	        }
+	      });
+	    })
+	  );
+	};
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	__webpack_require__(177);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (_ref) {
+	  var hero = _ref.hero;
+	
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'hero-box' },
+	    _react2.default.createElement('div', { className: 'unhovered' }),
+	    _react2.default.createElement('img', { src: hero.boxUrl })
+	  );
+	};
+
+/***/ },
+/* 177 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 178 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 179 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  heroes: [{
+	    name: 'Iron Man',
+	    boxUrl: '../public/assets/herobox/ironman.jpeg',
+	    blockUrl: '../../public/assets/heroblock/'
+	  }, {
+	    name: 'Batman',
+	    boxUrl: '../public/assets/herobox/batman.png',
+	    blockUrl: '../../public/assets/heroblock/'
+	  }, {
+	    name: 'Wonder Woman',
+	    boxUrl: '../public/assets/herobox/wonderwoman.jpeg',
+	    blockUrl: '../../public/assets/heroblock/'
+	  }, {
+	    name: 'Wolverine',
+	    boxUrl: '../public/assets/herobox/wolverine.jpeg',
+	    blockUrl: '../../public/assets/heroblock/'
+	  }, {
+	    name: 'Sentinel',
+	    boxUrl: '../public/assets/herobox/sentinel.jpg',
+	    blockUrl: '../../public/assets/heroblock/'
+	  }, {
+	    name: 'Superman',
+	    boxUrl: '../public/assets/herobox/superman.jpeg',
+	    blockUrl: '../../public/assets/heroblock/'
+	  }, {
+	    name: 'Darkseid',
+	    boxUrl: '../public/assets/herobox/darkseid.jpg',
+	    blockUrl: '../../public/assets/heroblock/'
+	  }, {
+	    name: 'Thanos',
+	    boxUrl: '../public/assets/herobox/thanos.jpeg',
+	    blockUrl: '../../public/assets/heroblock/'
+	  }, {
+	    name: 'Xavier',
+	    boxUrl: '../public/assets/herobox/xavier.png',
+	    blockUrl: '../../public/assets/heroblock/'
+	  }, {
+	    name: 'Green Lantern',
+	    boxUrl: '../public/assets/herobox/greenlantern.png',
+	    blockUrl: '../../public/assets/heroblock/'
+	  }, {
+	    name: 'Flash',
+	    boxUrl: '../public/assets/herobox/flash.jpeg',
+	    blockUrl: '../../public/assets/heroblock/'
+	  }, {
+	    name: 'Spiderman',
+	    boxUrl: '../public/assets/herobox/spiderman.jpeg',
+	    blockUrl: '../../public/assets/heroblock/'
+	  }],
+	  currentHero: {}
+	};
+
+/***/ },
+/* 180 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

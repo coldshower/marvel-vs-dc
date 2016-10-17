@@ -2,15 +2,17 @@ import React from 'react';
 import HeroBox from './HeroBox.js';
 import './HeroSelect.scss';
 
-export default ({ images }) => {
+export default ({ heroes, changeCurrentHero }) => {
   return (
-    <div>
+    <div id="hero-select">
       {
-        images.map(image => {
-          return (
-            <HeroBox image={ image } />
-          );
-        })
+        heroes.map(hero => (
+          <HeroBox 
+            key={ hero.name } 
+            hero={ hero } 
+            onClick={ () => changeCurrentHero(hero) }
+          />
+        ))
       }
     </div>
   );

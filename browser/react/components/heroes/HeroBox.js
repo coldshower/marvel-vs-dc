@@ -1,10 +1,11 @@
 import React from 'react';
 import './HeroBox.scss';
 
-export default ({image}) => {
+export default ({ hero }) => {
   return (
-    <div>
-      <img src={ image.src } />
+    <div className="hero-box">
+      <div className="unhovered" />
+      <img src={ hero.boxUrl } />
     </div>
   );
 }

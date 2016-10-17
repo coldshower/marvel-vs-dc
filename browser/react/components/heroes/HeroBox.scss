@@ -1,0 +1,27 @@
+.hero-box {
+	position: relative;
+	width: 50%;
+	height: 16.66%;
+	display: inline-block;
+	vertical-align: top;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.unhovered {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.8;
+	transition: 0.12s ease-in-out;
+}
+
+.unhovered:hover {
+	opacity: 0;
+}
