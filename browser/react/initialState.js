@@ -52,13 +52,13 @@ export default {
       name: 'Xavier',
       boxUrl: '../public/assets/herobox/xavier.png',
       bigUrl: '../public/assets/hero-big/xavier-big.jpg',
-      smallUrl: '../public/assets/hero-small/xavier.small.jpg'
+      smallUrl: '../public/assets/hero-small/xavier-small.jpg'
     },
     {
       name: 'Green Lantern',
       boxUrl: '../public/assets/herobox/greenlantern.png',
       bigUrl: '../public/assets/hero-big/greenlantern-big.jpg',
-      smallUrl: '../public/assets/hero-small/greenlatern-small.jpg'
+      smallUrl: '../public/assets/hero-small/greenlantern-small.jpg'
     },
     {
       name: 'Flash',

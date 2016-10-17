@@ -23,5 +23,8 @@
 }
 
 .unhovered:hover {
-	opacity: 0;
+	background: none;
+	opacity: 1;
+	outline: 5px dashed gold;
+	outline-offset: -5px;
 }

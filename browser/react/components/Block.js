@@ -7,7 +7,7 @@ export default ({ currentHero, currentRoster, side }) => {
   return (
     <div className="block">
       <BigScreen currentHero={ currentHero } side={ side } />
-      <Roster currentRoster={ currentRoster } />
+      <Roster currentRoster={ currentRoster } side={ side } />
     </div>
   );
 }

@@ -10,9 +10,9 @@ export default ({ heroes, changeCurrentHero, resetCurrentHero, addToRoster }) =>
           <HeroBox 
             key={ hero.name } 
             hero={ hero } 
-            onMouseEnter={ () => changeCurrentHero(hero) }
-            onMouseLeave={ () => resetCurrentHero() }
-            onClick={ () => addToRoster(hero) }
+            changeCurrentHero={ changeCurrentHero }
+            resetCurrentHero={ resetCurrentHero }
+            addToRoster={ addToRoster }
           />
         ))
       }

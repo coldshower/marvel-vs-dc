@@ -1,0 +1,16 @@
+.roster-box {
+	width: 30%;
+	height: auto;
+	margin: 0 1.5% 0 1.5%;
+	display: inline-block;
+	vertical-align: top;
+	outline: 2px solid 	#65c665;
+	outline-offset: -2px;
+	box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 1px 2px #32CD32;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}

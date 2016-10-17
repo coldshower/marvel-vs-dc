@@ -27,15 +27,15 @@ export default class Main extends React.Component {
 
   addToRoster (hero) {
     const { currentRoster } = this.state;
-    // if (currentRoster.length < 3) {
-    //   this.setState({
-    //     currentRoster: currentRoster.concat([hero])
-    //   });
-    // } else {
-    //   this.setState({
-    //     currentRoster: [hero]
-    //   });
-    // }
+    if (currentRoster.length < 3) {
+      this.setState({
+        currentRoster: currentRoster.concat([hero])
+      });
+    } else {
+      this.setState({
+        currentRoster: [hero]
+      });
+    }
   }
 
 	render () {
@@ -49,7 +49,7 @@ export default class Main extends React.Component {
           resetCurrentHero={ this.resetCurrentHero }
           addToRoster={ this.addToRoster }
         />
-        <Block currentHero={ {} } side="right" />
+        <Block currentHero={ {} } currentRoster={ [] } side="right" />
 			</div>
 		);
 	}
