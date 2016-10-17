@@ -21640,53 +21640,65 @@
 	  heroes: [{
 	    name: 'Iron Man',
 	    boxUrl: '../public/assets/herobox/ironman.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    bigUrl: '../public/assets/hero-big/ironman-big.jpg',
+	    smallUrl: '../public/assets/hero-small/ironman-small.jpg'
 	  }, {
 	    name: 'Batman',
 	    boxUrl: '../public/assets/herobox/batman.png',
-	    blockUrl: '../../public/assets/heroblock/'
+	    bigUrl: '../public/assets/hero-big/batman-big.jpg',
+	    smallUrl: '../public/assets/hero-small/batman-small.jpg'
 	  }, {
 	    name: 'Wonder Woman',
 	    boxUrl: '../public/assets/herobox/wonderwoman.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    bigUrl: '../public/assets/hero-big/wonderwoman-big.jpg',
+	    smallUrl: '../public/assets/hero-small/wonderwoman-small.jpg'
 	  }, {
 	    name: 'Wolverine',
 	    boxUrl: '../public/assets/herobox/wolverine.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    bigUrl: '../public/assets/hero-big/wolverine-big.jpg',
+	    smallUrl: '../public/assets/hero-small/wolverine-small.jpg'
 	  }, {
 	    name: 'Sentinel',
 	    boxUrl: '../public/assets/herobox/sentinel.jpg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    bigUrl: '../public/assets/hero-big/sentinel-big.jpg',
+	    smallUrl: '../public/assets/hero-small/sentinel-small.jpg'
 	  }, {
 	    name: 'Superman',
 	    boxUrl: '../public/assets/herobox/superman.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    bigUrl: '../public/assets/hero-big/superman-big.jpg',
+	    smallUrl: '../public/assets/hero-small/superman-small.jpg'
 	  }, {
 	    name: 'Darkseid',
 	    boxUrl: '../public/assets/herobox/darkseid.jpg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    bigUrl: '../public/assets/hero-big/darkseid-big.jpg',
+	    smallUrl: '../public/assets/hero-small/darkseid-small.jpg'
 	  }, {
 	    name: 'Thanos',
 	    boxUrl: '../public/assets/herobox/thanos.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    bigUrl: '../public/assets/hero-big/thanos-big.jpg',
+	    smallUrl: '../public/assets/hero-small/thanos-small.jpg'
 	  }, {
 	    name: 'Xavier',
 	    boxUrl: '../public/assets/herobox/xavier.png',
-	    blockUrl: '../../public/assets/heroblock/'
+	    bigUrl: '../public/assets/hero-big/xavier-big.jpg',
+	    smallUrl: '../public/assets/hero-small/xavier.small.jpg'
 	  }, {
 	    name: 'Green Lantern',
 	    boxUrl: '../public/assets/herobox/greenlantern.png',
-	    blockUrl: '../../public/assets/heroblock/'
+	    bigUrl: '../public/assets/hero-big/greenlantern-big.jpg',
+	    smallUrl: '../public/assets/hero-small/greenlatern-small.jpg'
 	  }, {
 	    name: 'Flash',
 	    boxUrl: '../public/assets/herobox/flash.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    bigUrl: '../public/assets/hero-big/flash-big.jpg',
+	    smallUrl: '../public/assets/hero-small/flash-small.jpg'
 	  }, {
 	    name: 'Spiderman',
 	    boxUrl: '../public/assets/herobox/spiderman.jpeg',
-	    blockUrl: '../../public/assets/heroblock/'
+	    bigUrl: '../public/assets/hero-big/spiderman-big.jpg',
+	    smallUrl: '../public/assets/hero-small/spiderman-small.jpg'
 	  }],
-	  currentHero: {}
+	  currentHeros: {}
 	};
 
 /***/ },
