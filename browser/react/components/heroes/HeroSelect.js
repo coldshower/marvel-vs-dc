@@ -2,7 +2,7 @@ import React from 'react';
 import HeroBox from './HeroBox.js';
 import './HeroSelect.scss';
 
-export default ({ heroes, changeCurrentHero }) => {
+export default ({ heroes, changeCurrentHero, resetCurrentHero, addToRoster }) => {
   return (
     <div id="hero-select">
       {
@@ -10,7 +10,9 @@ export default ({ heroes, changeCurrentHero }) => {
           <HeroBox 
             key={ hero.name } 
             hero={ hero } 
-            onClick={ () => changeCurrentHero(hero) }
+            onMouseEnter={ () => changeCurrentHero(hero) }
+            onMouseLeave={ () => resetCurrentHero() }
+            onClick={ () => addToRoster(hero) }
           />
         ))
       }

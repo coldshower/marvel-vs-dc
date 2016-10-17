@@ -73,5 +73,6 @@ export default {
       smallUrl: '../public/assets/hero-small/spiderman-small.jpg'
     },
   ],
-  currentHeros: {}
+  currentHero: {},
+  currentRoster: []
 }

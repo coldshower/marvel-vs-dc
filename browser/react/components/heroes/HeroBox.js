@@ -5,7 +5,7 @@ export default ({ hero }) => {
   return (
     <div className="hero-box">
       <div className="unhovered" />
-      <img src={ hero.boxUrl } />
+      <img src={ hero.smallUrl } />
     </div>
   );
 }

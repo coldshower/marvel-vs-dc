@@ -1,10 +1,13 @@
 import React from 'react';
 import '../../scss/Block.scss';
+import Roster from './roster/Roster.js';
+import BigScreen from './BigScreen.js';
 
-export default (props) => {
+export default ({ currentHero, currentRoster, side }) => {
   return (
     <div className="block">
-      Hello
+      <BigScreen currentHero={ currentHero } side={ side } />
+      <Roster currentRoster={ currentRoster } />
     </div>
   );
 }

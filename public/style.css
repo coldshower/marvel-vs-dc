@@ -3,6 +3,20 @@
   height: 100%;
   display: inline-block;
   vertical-align: top; }
+.big-screen {
+  background-color: red;
+  width: 70%;
+  height: 70%;
+  margin-top: 3%; }
+  .big-screen img {
+    width: 100%;
+    height: auto; }
+
+.screen-left {
+  margin-left: 7%; }
+
+.screen-right {
+  margin-left: 23%; }
 .hero-box {
   position: relative;
   width: 50%;
@@ -29,8 +43,8 @@
   position: absolute;
   opacity: 0.85;
   width: 16.66%;
-  height: 100%;
-  top: 1px;
+  height: 100.1%;
+  top: 0.25px;
   left: 41.68%; }
 body {
   background-color: black;
@@ -45,7 +59,8 @@ body {
   background: url(./dist/c0cfb665498b34c393da96dd23dde9e3.gif);
   background-size: cover;
   background-position: 50%;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  padding-top: 1px; }
 
 #main {
   width: 100%;
