@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/coldshower/marvel-vs-dc/issues"
+    "url": "https://github.com/coldshower/marvelvdc/issues"
   },
-  "homepage": "https://github.com/coldshower/marvel-vs-dc#readme",
+  "homepage": "https://github.com/coldshower/marvelvdc#readme",
   "dependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.17.0",
